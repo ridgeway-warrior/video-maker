@@ -7,7 +7,7 @@ jobs:
           OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
         runs-on: ubuntu-latest
         steps:
-            - run: echo "::mask::${{secrets.IG_USER_ID}}"
+            - run: export $OPENAI_API_KEY
             - uses: "actions/checkout@main"
               with:
                 repository: "ridgeway-warrior/video-maker"
