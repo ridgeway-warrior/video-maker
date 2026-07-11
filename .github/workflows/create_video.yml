@@ -8,6 +8,8 @@ jobs:
             - uses: "actions/checkout@main"
             - uses: "actions/setup-node@main"
             - uses: "pnpm/action-setup@master"
+              with: 
+                version: 11
             - run: pnpm ci
             - run: pnpm remotion render MyComp video.mp4
               env:
