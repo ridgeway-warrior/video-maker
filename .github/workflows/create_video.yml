@@ -1,0 +1,19 @@
+name: Video Creator
+on: workflow_call
+
+jobs:
+    create_video:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: "actions/checkout@main"
+            - uses: "actions/setup-node@main"
+            - uses: "pnpm/action-setup@master"
+            - run: pnpm ci
+            - run: pnpm remotion render MyComp video.mp4
+              env:
+                OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
+            - uses: "actions/upload-artifact@main"
+              with:
+                name: remotion-video
+                path: video.mp4
+
