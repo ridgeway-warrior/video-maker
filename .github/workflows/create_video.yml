@@ -3,6 +3,8 @@ on: workflow_call
 
 jobs:
     create_video:
+        env:
+          OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
         runs-on: ubuntu-latest
         steps:
             - run: echo "::mask::${{secrets.IG_USER_ID}}"
@@ -15,8 +17,6 @@ jobs:
                 version: 11
             - run: pnpm ci
             - run: pnpm remotion render MyComp video.mp4
-              env:
-                OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
             - uses: "actions/upload-artifact@main"
               with:
                 name: remotion-video
