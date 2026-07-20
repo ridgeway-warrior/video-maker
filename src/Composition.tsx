@@ -15,5 +15,5 @@ export const MyComposition = ({text}: {text: string}) => {
       </div>
       </div>
     </AbsoluteFill>
-    <Html5Audio src={staticFile("Illa Salati (Duo).mp3")} trimBefore={fps * 100} trimAfter={fps*107} volume={1}/>
+    <Html5Audio src={staticFile("Illa Salati (Duo).mp3")} trimBefore={fps * 0} trimAfter={fps*7} volume={1}/>
     </>}
