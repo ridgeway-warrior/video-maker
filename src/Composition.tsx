@@ -1,7 +1,6 @@
-import { AbsoluteFill, Html5Audio, interpolate, OffthreadVideo, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Html5Audio, staticFile, useVideoConfig } from "remotion";
 
 export const MyComposition = ({text}: {text: string}) => {
-  const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
     return <>
     <AbsoluteFill  className="text-7xl text-center justify-center font-playpen font-black bg-white items-center leading-20">
@@ -16,5 +15,5 @@ export const MyComposition = ({text}: {text: string}) => {
       </div>
       </div>
     </AbsoluteFill>
-    <Html5Audio src={staticFile("muqit-nasheed.mp3")} trimBefore={fps * 100} trimAfter={fps*107} volume={1}/>
+    <Html5Audio src={staticFile("Illa Salati (Duo).mp3")} trimBefore={fps * 100} trimAfter={fps*107} volume={1}/>
     </>}
